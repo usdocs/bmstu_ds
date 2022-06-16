@@ -1,0 +1,94 @@
+<!doctype html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Прогнозирование соотношения матрица-наполнитель</title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Введите значение</legend>
+        Плотность, кг/м3
+        <input name="val1" type="number"
+        required>
+        <br>
+        <br>
+        модуль упругости, ГПа
+        <input name="val2" type="number"
+        required>
+        <br>
+        <br>
+        Количество отвердителя, м.%
+        <input name="val3" type="number"
+        required>
+        <br>
+        <br>
+        Содержание эпоксидных групп,%_2
+        <input name="val4" type="number"
+        required>
+        <br>
+        <br>
+        Температура вспышки, С_2
+        <input name="val5" type="number"
+        required>
+        <br>
+        <br>
+        Поверхностная плотность, г/м2
+        <input name="val6" type="number"
+        required>
+        <br>
+        <br>
+        Модуль упругости при растяжении, ГПа
+        <input name="val7" type="number"
+        required>
+        <br>
+        <br>
+        Прочность при растяжении, МПа
+        <input name="val8" type="number"
+        required>
+        <br>
+        <br>
+        Потребление смолы, г/м2
+        <input name="val9" type="number"
+        required>
+        <br>
+        <br>
+        Угол нашивки, град
+        <input name="val10" type="number"
+        required>
+        <br>
+        <br>
+        Шаг нашивки
+        <input name="val11" type="number"
+        required>
+        <br>
+        <br>
+        Плотность нашивки
+        <input name="val12" type="number"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size:50px">
+        Прогнозируемое соотношение матрица-наполнитель
+        </p>
+        <p style="font-size:50px">{{result}}</p>
+    {% endif %}
+</div>
